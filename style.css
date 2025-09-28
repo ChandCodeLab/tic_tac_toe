@@ -1,72 +1,104 @@
-*{
-    margin: 0;
-    padding: 0;
-}
-body{
-   background-color: 	#5c6276; 
-   text-align: center;
-   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-.container{
-    text-align: center;
-    height: 70vh;
- display: flex;
- justify-content: center;
- align-items: center;
-}
-.game{
-    height: 60vmin;
-    width: 60vmin;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 1.5vmin;
-    
-    
-}
-.box{
-    height: 18vmin;
-    width: 18vmin;
-    font-size: 8vmin;
-    color: rgb(113, 22, 22);
-    border-radius: 1rem;
-    border: none;
-    box-shadow: 0 0 2rem  rgba(0,0,0,0.3);
-    background-color: antiquewhite;
-}
-.reset{
-    padding:1rem;
-    font-size: 1.25rem;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    border-radius: 1rem;
-    border: none;
-    
-    
-}
-.msg{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: antiquewhite;
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
-.msg-container{
-    height: 100vmin;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    font-size: 1.25rem;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    gap: 1rem;
+body {
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #fff;
+}
 
+/* Overlay message */
+.msg-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(15, 15, 15, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 10;
+  backdrop-filter: blur(10px);
 }
-.new-btn{
-    padding:1rem;
-    font-size: 1.25rem;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    border-radius: 1rem;
-    border: none;
+
+.msg-container p {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #58a6ff;
+  text-shadow: 0 0 10px rgba(88, 166, 255, 0.7);
 }
-.hide{
-    display: none;
+
+.hide {
+  display: none;
+}
+
+/* Title */
+h1 {
+  margin-bottom: 1rem;
+  text-shadow: 0 0 15px rgba(0,0,0,0.5);
+}
+
+/* Game container */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game {
+  display: grid;
+  grid-template-columns: repeat(3, 120px);
+  gap: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+}
+
+/* Game boxes */
+.box {
+  width: 120px;
+  height: 120px;
+  font-size: 2.5rem;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+}
+
+.box:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: scale(1.05);
+}
+
+/* Buttons */
+.reset, .new-btn {
+  margin-top: 1.5rem;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 10px;
+  background: #58a6ff;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.reset:hover, .new-btn:hover {
+  background: #1f6feb;
+  transform: scale(1.05);
 }
